@@ -12,4 +12,5 @@ namespace Chat_ddsv
 
         public string Summary { get; set; }
     }
+    //teste
 }
