@@ -46,14 +46,14 @@ namespace Chat_ddsv.Controllers
             return Ok(usuario);
         }
 
-        //GET: api/Usuario/delete/Matrix
+        //GET: api/Usuario/delete/1
         [HttpDelete]
-        [Route("delete/{name}")]
-        public IActionResult Delete(string name)
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
         {
             //Where -> Expressão lambda
             //Buscar um objeto pelo nome
-            Usuario usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.Nome == name);
+            Usuario usuario = _context.Usuarios.Find(id);
             if (usuario == null)
             {
                 return NotFound();
