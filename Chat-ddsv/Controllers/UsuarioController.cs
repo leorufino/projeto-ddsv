@@ -46,6 +46,20 @@ namespace Chat_ddsv.Controllers
             return Ok(usuario);
         }
 
+        //GET: api/Usuario/getbycpf/1
+        [HttpGet]
+        [Route("getbycpf/{cpf}")]
+        public IActionResult GetByCpf([FromRoute] string cpf)
+        {
+            //Buscar um objeto pela chave primária
+            Usuario usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.Cpf == cpf);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            return Ok(usuario);
+        }
+
         //GET: api/Usuario/delete/1
         [HttpDelete]
         [Route("delete/{id}")]
