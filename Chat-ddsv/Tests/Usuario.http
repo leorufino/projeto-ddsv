@@ -1,0 +1,18 @@
+### Cadastrar um novo usuário
+POST https://localhost:5001/api/usuario/create
+Content-Type: application/json
+
+{
+    "Email" : "diogo@diogo.com",
+    "Senha" : "123",
+    "Permissao" : "user"
+}
+
+### Realizar o login
+GET https://localhost:5001/api/usuario/login
+Content-Type: application/json
+
+{
+    "Email" : "diogo@diogo.com",
+    "Senha" : "123"
+}
