@@ -7,6 +7,11 @@ Content-Type: application/json
     "Senha" : "123"
 }
 
+### Get by id
+GET https://localhost:5001/api/usuario/getbyid/1
+Content-Type: application/json
+
+
 ### Realizar o login
 GET https://localhost:5001/api/usuario/login
 Content-Type: application/json
@@ -14,4 +19,12 @@ Content-Type: application/json
 {
     "Email" : "leo@hotmail.com",
     "Senha" : "123"
+}
+
+### Realizar o Logout
+GET https://localhost:5001/api/usuario/logout
+Content-Type: application/json
+
+{
+    "Email" : "leo@hotmail.com"
 }
