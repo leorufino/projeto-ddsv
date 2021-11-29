@@ -14,6 +14,9 @@ export class UsuarioService {
     list(): Observable<Usuario[]> {
         return this.http.get<Usuario[]>(`${this.baseUrl}/list`);
     }
+    login(usuario: Usuario): Observable<Usuario> {
+        return this.http.post<Usuario>(`${this.baseUrl}/login`, usuario);
+    }
     create(usuario: Usuario): Observable<Usuario> {
         return this.http.post<Usuario>(`${this.baseUrl}/create`, usuario);
     }

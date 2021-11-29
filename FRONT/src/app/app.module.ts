@@ -1,6 +1,6 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TemplateComponent } from "./components/template/template.component";
 import { CadastrarUsuarioComponent } from './components/views/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { HomeUsuarioComponent } from './components/views/usuario/home-usuario/home-usuario.component';
 
@@ -27,13 +26,13 @@ import { HomeUsuarioComponent } from './components/views/usuario/home-usuario/ho
     AppComponent,
     HomeUsuarioComponent,
     CadastrarUsuarioComponent,
-    TemplateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

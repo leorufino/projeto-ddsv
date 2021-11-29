@@ -9,7 +9,8 @@ import { UsuarioService } from "src/app/services/usuario.service";
     styleUrls: ["./index.component.css"],
 })
 export class IndexComponent implements OnInit {
-    usuarios: Usuario[] = [];
+    email!: string;
+    senha!: string;
 
     constructor(
         private usuarioService: UsuarioService,
@@ -17,8 +18,25 @@ export class IndexComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.usuarioService.list().subscribe((usuarios) => {
-            this.usuarios = usuarios;
+
+    }
+
+    logar(): void {
+        let usuario: Usuario = {
+            email: this.email,
+            senha: this.senha,
+            nome: "",
+            sobrenome: "",
+            cpf: "",
+            dataNascimento: ""
+        };
+        this.usuarioService.login(usuario).subscribe((usuario) => {
+            console.log(usuario);
+            this.router.navigate(["usuario/home"]);
         });
+    }
+
+    criarConta(): void {
+         this.router.navigate(["usuario/cadastrar"]);
     }
 }
