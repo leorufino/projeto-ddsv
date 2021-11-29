@@ -32,20 +32,6 @@ namespace Chat_ddsv.Controllers
         [HttpGet]
         public IActionResult List() => Ok(_context.Amigos.ToList());
 
-        //GET: api/Amigo/getbyid/1
-        [HttpGet]
-        [Route("getbyid/{id}")]
-        public IActionResult GetById([FromRoute] int id)
-        {
-            //Buscar um objeto pela chave primária
-            Amigo amigo = _context.Amigos.Find(id);
-            if (amigo == null)
-            {
-                return NotFound();
-            }
-            return Ok(amigo);
-        }
-
         //GET: api/Amigo/getbyemail/1
         [HttpGet]
         [Route("getbycpf/{email}")]
