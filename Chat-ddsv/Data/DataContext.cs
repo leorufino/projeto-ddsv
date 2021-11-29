@@ -10,5 +10,7 @@ namespace Chat_ddsv.Data
 
         //Lista de propriedades de classes de modelo que vão virar as tabelas no banco
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Amigo> Amigos { get; set; }
     }
 }
