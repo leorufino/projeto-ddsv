@@ -1,0 +1,17 @@
+using System;
+
+namespace Chat_ddsv.Models
+{
+    public class ListaDeAmigos
+    {
+        //Construtor
+        public ListaDeAmigos() => CreatedAt = DateTime.Now;
+
+        //Atributos
+        public int Id { get; set; }
+        public string IdUsuario { get; set; }
+        public string IdAmigo { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+    }
+}
