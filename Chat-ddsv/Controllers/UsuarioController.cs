@@ -16,7 +16,6 @@ namespace Chat_ddsv.Controllers
         {
             _context = context;
         }
-
         //POST: /api/Usuario/create
         [Route("create")]
         [HttpPost]
@@ -26,12 +25,10 @@ namespace Chat_ddsv.Controllers
             _context.SaveChanges();
             return Created("", usuario);
         }
-
         //GET: /api/Usuario/list
         [Route("list")]
         [HttpGet]
         public IActionResult List() => Ok(_context.Usuarios.ToList());
-
         //GET: api/Usuario/getbyid/1
         [HttpGet]
         [Route("getbyid/{id}")]
@@ -45,7 +42,6 @@ namespace Chat_ddsv.Controllers
             }
             return Ok(usuario);
         }
-
         //GET: api/Usuario/getbycpf/1
         [HttpGet]
         [Route("getbycpf/{cpf}")]
@@ -59,7 +55,6 @@ namespace Chat_ddsv.Controllers
             }
             return Ok(usuario);
         }
-
         //GET: api/Usuario/delete/1
         [HttpDelete]
         [Route("delete/{id}")]
@@ -76,7 +71,6 @@ namespace Chat_ddsv.Controllers
             _context.SaveChanges();
             return Ok(_context.Usuarios.ToList());
         }
-
         //PUT: /api/Usuario/create
         [Route("update")]
         [HttpPut]
@@ -86,7 +80,6 @@ namespace Chat_ddsv.Controllers
             _context.SaveChanges();
             return Ok(usuario);
         }
-
         // GET: api/usuario/login
         [HttpGet]
         [Route("login")]
@@ -105,7 +98,6 @@ namespace Chat_ddsv.Controllers
 
             return Ok(usuario);
         }
-
         // GET: api/usuario/Logout
         [HttpGet]
         [Route("Logout")]

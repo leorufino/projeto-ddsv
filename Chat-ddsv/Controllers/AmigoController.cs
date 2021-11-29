@@ -16,7 +16,6 @@ namespace Chat_ddsv.Controllers
         {
             _context = context;
         }
-
         //POST: /api/Amigo/create
         [Route("create")]
         [HttpPost]
@@ -26,12 +25,10 @@ namespace Chat_ddsv.Controllers
             _context.SaveChanges();
             return Created("", amigo);
         }
-
         //GET: /api/Amigo/list
         [Route("list")]
         [HttpGet]
         public IActionResult List() => Ok(_context.Amigos.ToList());
-
         //GET: api/Amigo/getbyemail/1
         [HttpGet]
         [Route("getbycpf/{email}")]
