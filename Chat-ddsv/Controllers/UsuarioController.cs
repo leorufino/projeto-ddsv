@@ -100,7 +100,28 @@ namespace Chat_ddsv.Controllers
             }
 
             usuario.Token = TokenService.CriarToken(usuario);
-            usuario.Senha = "";
+            _context.Usuarios.Update(usuario);
+            _context.SaveChanges();
+
+            return Ok(usuario);
+        }
+
+        // GET: api/usuario/Logout
+        [HttpGet]
+        [Route("Logout")]
+        public IActionResult Logout([FromBody] Usuario usuario)
+        {
+            usuario = _context.Usuarios.FirstOrDefault
+                (u => u.Email == usuario.Email);
+            if (usuario.Token == null)
+            {
+                return NotFound(new { message = "Este usuário não está logado no sistema" });
+            }
+
+            usuario.Token = null;
+
+            _context.Usuarios.Update(usuario);
+            _context.SaveChanges();
             return Ok(usuario);
         }
     }
