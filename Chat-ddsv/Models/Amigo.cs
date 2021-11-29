@@ -8,6 +8,9 @@ namespace Chat_ddsv.Models
         public Amigo() => CreatedAt = DateTime.Now;
 
         //Atributos
+        public int Id { get; set; }
+
+        public int UsuarioId { get; set; }
         public int AmigoId { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }

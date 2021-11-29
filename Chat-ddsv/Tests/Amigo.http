@@ -1,0 +1,10 @@
+### Cadastrar um novo Amigo
+POST https://localhost:5001/api/amigo/create
+Content-Type: application/json
+
+{
+    "UsuarioId" : "1",
+    "AmigoId" : "3",
+    "Nome": "Mario",
+    "Email": "mario@hotmail.com"
+}
