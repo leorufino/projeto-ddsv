@@ -40,7 +40,7 @@ namespace Chat_ddsv
 
             services.AddDbContext<DataContext>
             (
-                options => options.UseSqlServer(Configuration.GetConnectionString("Azure"))
+                options => options.UseInMemoryDatabase("database")
             );
 
             services.AddControllers();
